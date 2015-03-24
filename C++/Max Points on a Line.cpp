@@ -17,13 +17,14 @@
 class Solution {
 public:
     int maxPoints(vector<Point> &points) {
-        int max_counter = 0;
-        int cur_counter = 0;
-        int this_point_max = 1;
-        map<int, int> modifier;
-        map<pair<int, int>, int> counter;
-        pair<int, int> line;
-        int slope = 0;
+        int max_counter = 0;    // final answer
+        int cur_counter = 0;    // temp answer
+        int this_point_max = 0; // max point on a line with out repeat point
+        int samePoint = 1;      // how many same point
+
+        map<pair<int, double>, int> counter;
+        pair<int, double> line;
+        double slope = 0;
 
         if(points.size() == 1)
             return 1;
@@ -33,36 +34,51 @@ public:
 
         for(int i = 0; i < points.size(); i++) {
             for(int j = 0; j < points.size(); j++) {
+                // this point, jump over
                 if(i == j)
                     continue;
 
+                // same point, samePoint++
                 if(points[i].x == points[j].x && points[i].y == points[j].y) {
-                    modifier[i] = (modifier.find(i) == modifier.end() ? 1 : modifier.find(i)->second) + 1;
+                    samePoint += 1;
                     continue;
                 }
 
+                // vertical, special process
                 else if(points[i].x == points[j].x) {
-                    slope = 0xffff;
+                    slope = (double)INT_MAX;
                     line.first = i;
                     line.second  = slope;
                 }
 
+                // other cases, not the same point
                 else {
-                    slope = float((points[i].y - points[j].y)) / float((points[i].x - points[j].x));
+                    slope = (double)(points[i].y - points[j].y) / (double)(points[i].x - points[j].x);
                     line.first = i;
                     line.second  = slope;
                 }
 
+                // calculate the numbers of points on the same line
                 counter[line] = (counter.find(line) == counter.end() ? 0 : counter.find(line)->second) + 1;
+
+                // keep this_point_max as the max of this point
                 this_point_max = this_point_max > counter[line] ? this_point_max : counter[line];
             }
 
-            cur_counter = this_point_max + (modifier.find(i) == modifier.end() ? 1 : modifier.find(i)->second);
-            this_point_max = 1;
+            // calculate cur_counter
+            cur_counter = this_point_max + samePoint;
 
+            // update max_counter
             max_counter = max_counter > cur_counter ? max_counter : cur_counter;
 
+            // reset this_point_max
+            this_point_max = 0;
+
+            // clean the counter
             counter.clear();
+
+            // reset samePoint
+            samePoint = 1;
         }
 
         return max_counter;
