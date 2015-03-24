@@ -24,6 +24,7 @@ class Solution:
         # if numbers of points is not enough, return directly
         if len(points) == 1:
             return 1
+
         if len(points) == 2:
             return 2
 
