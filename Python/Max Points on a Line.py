@@ -17,7 +17,9 @@ class Solution:
     def maxPoints(self, points):
         max_counter = 0
         cur_counter = 0
+        this_point_max = 0
         samePoint = 1
+
         counter = {}
         line = ()
 
@@ -53,17 +55,17 @@ class Solution:
                 # calculate the numbers of points on the same line
                 counter[line] = counter.get(line, 0) + 1
 
-            # if counter is NOT null, calculate normally
-            if counter.values() != []:
-                cur_counter = max(counter.values()) + samePoint
+                # keep this_point_max as the max of this point
+                this_point_max = max(this_point_max, counter[line])
 
-            # if counter is NULL, use samePoint
-            else:
-                cur_counter = samePoint
+            # calculate cur_counter
+            cur_counter = this_point_max + samePoint
 
-            # if cur is bigger the max, set max to cur
-            if cur_counter > max_counter:
-                max_counter = cur_counter
+            # update max_counter
+            max_counter = max(max_counter, cur_counter)
+
+            # reset this_point_max
+            this_point_max = 0
 
             # clean the counter
             counter = {}
