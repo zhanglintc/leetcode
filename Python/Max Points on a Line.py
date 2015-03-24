@@ -17,7 +17,7 @@ class Solution:
     def maxPoints(self, points):
         max_counter = 0
         cur_counter = 0
-        modifier = {}
+        samePoint = 1
         counter = {}
         line = ()
 
@@ -35,9 +35,9 @@ class Solution:
                 if i == j:
                     continue
 
-                # same point, calculate the modifier
+                # same point, samePoint++
                 if points[i].x == points[j].x and points[i].y == points[j].y:
-                    modifier[i] = modifier.get(i, 1) + 1
+                    samePoint += 1
                     continue
 
                 # vertical, special process
@@ -55,11 +55,11 @@ class Solution:
 
             # if counter is NOT null, calculate normally
             if counter.values() != []:
-                cur_counter = max(counter.values()) + modifier.get(i, 1)
+                cur_counter = max(counter.values()) + samePoint
 
-            # if counter is NULL, calculate only the modifier
+            # if counter is NULL, use samePoint
             else:
-                cur_counter = modifier.get(i, 1)
+                cur_counter = samePoint
 
             # if cur is bigger the max, set max to cur
             if cur_counter > max_counter:
@@ -67,6 +67,9 @@ class Solution:
 
             # clean the counter
             counter = {}
+
+            # reset samePoint
+            samePoint = 1
 
         return max_counter
 
