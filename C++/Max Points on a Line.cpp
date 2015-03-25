@@ -26,14 +26,14 @@ public:
         pair<int, double> line;
         double slope = 0;
 
-        if(points.size() == 1)
+        if((int)points.size() == 1)
             return 1;
 
-        if(points.size() == 2)
+        if((int)points.size() == 2)
             return 2;
 
-        for(int i = 0; i < points.size(); i++) {
-            for(int j = 0; j < points.size(); j++) {
+        for(int i = 0; i < (int)points.size(); i++) {
+            for(int j = 0; j < (int)points.size(); j++) {
                 // this point, jump over
                 if(i == j)
                     continue;
