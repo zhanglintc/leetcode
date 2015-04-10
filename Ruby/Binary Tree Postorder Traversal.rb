@@ -28,7 +28,17 @@
 # @param {TreeNode} root
 # @return {Integer[]}
 def postorder_traversal(root)
-    
+    lst = []
+    helper(root, lst)
+    return lst
+end
+
+def helper(root, lst)
+    if root != nil
+        helper(root.left,  lst)
+        helper(root.right, lst)
+        lst.push(root.val)
+    end
 end
 
 
