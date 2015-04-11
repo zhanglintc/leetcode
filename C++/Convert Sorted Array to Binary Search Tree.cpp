@@ -14,11 +14,9 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-class Solution
-{
+class Solution {
 public:
-    TreeNode *sortedListToBST_helper(ListNode *head, TreeNode *root)
-    {
+    TreeNode *sortedListToBST_helper(ListNode *head, TreeNode *root) {
         root->left  = new TreeNode(0);
         root->right = new TreeNode(0);
         ListNode *fast = head;
@@ -28,21 +26,21 @@ public:
         ListNode *left  = NULL; // here
         ListNode *right = NULL; // here
 
-        if(head == NULL) // no node
-        {
+        // no node
+        if(head == NULL) {
             return NULL;
         }
 
-        if(head->next == NULL) // one node
-        {
+        // one node
+        if(head->next == NULL) {
             root->val = head->val;
             root->left  = NULL;
             root->right = NULL;
             return root;
         }
 
-        if(head->next->next == NULL) // two nodes
-        {
+        // two nodes
+        if(head->next->next == NULL) {
             root->val   = head->next->val;
             head->next  = NULL;
             root->left  = sortedListToBST_helper(head,  root->left);
@@ -50,23 +48,23 @@ public:
             return root;
         }
 
-        while(fast->next != NULL && fast->next->next != NULL) // three or more nodes
-        {
+        // three or more nodes
+        while(fast->next != NULL && fast->next->next != NULL) {
             fast = fast->next->next;
             prev = slow;
             slow = slow->next;
         }
 
-        if(fast->next == NULL) // odd
-        {
+        // odd
+        if(fast->next == NULL) {
             left = head;
             right = slow->next;
             root->val = slow->val;
             prev->next = NULL;
         }
 
-        else if(fast->next->next == NULL) // even
-        {
+        // even
+        else if(fast->next->next == NULL) {
             left = head;
             right = slow->next->next;
             root->val = slow->next->val;
@@ -79,8 +77,7 @@ public:
         return root;
     }
 
-    TreeNode *sortedListToBST(ListNode *head)
-    {
+    TreeNode *sortedListToBST(ListNode *head) {
         TreeNode *root = new TreeNode(0);
         return sortedListToBST_helper(head, root);
     }
