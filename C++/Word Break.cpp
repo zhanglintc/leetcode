@@ -15,7 +15,18 @@
 class Solution {
 public:
     bool wordBreak(string s, unordered_set<string> &dict) {
-        ;
+        bool dp[s.size() + 1] = {};
+        dp[0] = true;
+
+        for(int i = 0; i < s.size() + 1; i++) {
+            for(int j = 0; j < i; j++) {
+                if(dp[j] && dict.find(s.substr(j, i - j)) != dict.end()) {
+                    dp[i] = true;
+                }
+            }
+        }
+
+        return dp[s.size()];
     }
 };
 
