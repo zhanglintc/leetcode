@@ -11,6 +11,7 @@
 // dict = ["leet", "code"].
 
 // Return true because "leetcode" can be segmented as "leet code".
+
 public class Solution {
     public boolean wordBreak(String s, Set<String> dict) {
         boolean[] dp = new boolean[s.length() + 1];
