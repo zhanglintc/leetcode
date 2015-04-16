@@ -35,7 +35,67 @@
 
 public class Solution {
     public void solveSudoku(char[][] board) {
-        ;
+        doSolveSudoku(board);
+    }
+
+    public boolean doSolveSudoku(char[][] board) {
+        for(int row = 0; row < 9; row++) {
+            for(int column = 0; column < 9; column++) {
+                if(board[row][column] == '.') {
+                    for(char c = '1'; c <= '9'; c++) {
+                        board[row][column] = c;
+
+                        if(isValid(board, row, column) && doSolveSudoku(board)) {
+                            return true;
+                        }
+
+                        else {
+                            board[row][column] = '.';
+                        }
+                    }
+
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public boolean isValid(char[][] board, int this_row, int this_column) {
+        char this_num = board[this_row][this_column];
+        board[this_row][this_column] = '.';
+
+        for(int row = 0; row < 9; row++) {
+            if(board[row][this_column] == this_num) {
+                board[this_row][this_column] = this_num;
+                return false;
+            }
+        }
+
+        for(int column = 0; column < 9; column++) {
+            if(board[this_row][column] == this_num) {
+                board[this_row][this_column] = this_num;
+                return false;
+            }
+        }
+
+        int base_row    = this_row    / 3 * 3;
+        int base_column = this_column / 3 * 3;
+
+        for(int sub_row = 0; sub_row < 3; sub_row++) {
+            for(int sub_column = 0; sub_column < 3; sub_column++) {
+                int real_row    = base_row + sub_row;
+                int real_column = base_column + sub_column;
+
+                if(board[real_row][real_column] == this_num) {
+                    return false;
+                }
+            }
+        }
+
+        board[this_row][this_column] = this_num;
+        return true;
     }
 }
 
