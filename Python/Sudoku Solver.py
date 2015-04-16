@@ -37,92 +37,62 @@ class Solution:
     # @param board, a 9x9 2D array
     # Solve the Sudoku by modifying the input board in-place.
     # Do not return any value.
-    def isValidSudoku(self, board):
+    def solveSudoku(self, board):
+        # solveSudoku cannot return anything, so we call another function
+        self.doSolveSudoku(board)
+
+    def doSolveSudoku(self, board):
+        for row in range(9):
+            for column in range(9):
+                if board[row][column] == '.':
+                    for i in range(1, 9 + 1): # from 1 to 9
+                        board[row][column] = str(i)
+
+                        # if this position is OK && resest of board is OK, return True
+                        if self.isValid(board, row, column) and self.doSolveSudoku(board):
+                            return True
+
+                        # else restore this position
+                        else:
+                            board[row][column] = '.'
+
+                    # no number fit this position, return False
+                    return False
+
+        # every position is OK, return True
+        return True
+
+    def isValid(self, board, this_row, this_column):
+        # store this_num and replace it with '.'
+        this_num = board[this_row][this_column]
+        board[this_row][this_column] = '.'
+
         # check row
         for row in range(9):
-            occurred = []
-            for column in range(9):
-                if board[row][column] not in occurred or board[row][column] == '.':
-                    occurred.append(board[row][column])
-
-                else:
-                    return False
+            if board[row][this_column] == this_num:
+                board[this_row][this_column] = this_num
+                return False
 
         # check column
         for column in range(9):
-            occurred = []
-            for row in range(9):
-                if board[row][column] not in occurred or board[row][column] == '.':
-                    occurred.append(board[row][column])
-
-                else:
-                    return False
+            if board[this_row][column] == this_num:
+                board[this_row][this_column] = this_num
+                return False
 
         # check sub-box
-        for base_row in range(3):
-            for base_column in range(3):
-                occurred = []
-                for sub_row in range(3):
-                    for sub_column in range(3):
-                        real_row    = base_row * 3 + sub_row
-                        real_column = base_column * 3 + sub_column
-                        if board[real_row][real_column] not in occurred or board[real_row][real_column] == '.':
-                            occurred.append(board[real_row][real_column])
+        base_row    = this_row    / 3 * 3
+        base_column = this_column / 3 * 3
 
-                        else:
-                            return False
+        for sub_row in range(3):
+            for sub_column in range(3):
+                real_row    = base_row + sub_row
+                real_column = base_column + sub_column
 
-        # all well, return True
-        return True
-
-
-    def solveSudoku(self, board):
-        for row in range(9):
-            for line in range(9):
-                if board[row][line] == '.':
-                    for i in range(1, 10):
-                        board[row][line] = str(i)
-                        if self.isValidSudoku(board) and self.solveSudoku(board):
-                            return True
-                        board[row][line] = '.'
+                if board[real_row][real_column] == this_num:
                     return False
+
+        # all well, restore this_num and return True
+        board[this_row][this_column] = this_num
         return True
-    '''
 
-    def solveSudoku(self, board):
-        def isValid(x,y):
-            tmp=board[x][y]; board[x][y]='D'
-            for i in range(9):
-                if board[i][y]==tmp: return False
-            for i in range(9):
-                if board[x][i]==tmp: return False
-            for i in range(3):
-                for j in range(3):
-                    if board[(x/3)*3+i][(y/3)*3+j]==tmp: return False
-            board[x][y]=tmp
-            return True
-        def dfs(board):
-            for i in range(9):
-                for j in range(9):
-                    if board[i][j]=='.':
-                        for k in '123456789':
-                            board[i][j]=k
-                            if isValid(i,j) and dfs(board):
-                                return True
-                            board[i][j]='.'
-                        return False
-            return True
-        dfs(board)
-    '''
-raw_board = ["..9748...","7........",".2.1.9...","..7...24.",".64.1.59.",".98...3..","...8.3.2.","........6","...2759.."]
-board = []
-for row in raw_board:
-    new_row = []
-    for c in row:
-        new_row.append(c)
-    board.append(new_row[::])
-
-s = Solution()
-s.solveSudoku(board)
-print board
 
