@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2015.04.16 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/house-robber/
+
 # Problem:
 # You are a professional robber planning to rob houses along a street.
 # Each house has a certain amount of money stashed, the only constraint stopping you from
@@ -19,26 +22,23 @@ class Solution:
     # @param num, a list of integer
     # @return an integer
     def rob(self, num):
-        fina_max = 0
-        for offset in range(len(num)):
-            fina_max = max(fina_max, self.doRob(num, offset, num[offset]))
+        if not num:
+            return 0
 
-        return fina_max
+        if len(num) == 1:
+            return num[0]
 
-    def doRob(self, num, offset, loot):
-        if offset == (len(num) - 1) or offset == (len(num) - 2):
-            return loot
+        if len(num) == 2:
+            return max(num[0], num[1])
 
-        this_max = 0
-        for offset in range(offset + 2, len(num)):
-            this_max = max(this_max, self.doRob(num, offset, loot + num[offset]))
+        dp = [0 for i in range(len(num))]
 
-        return this_max
+        dp[0] = num[0]
+        dp[1] = max(num[0], num[1])
 
+        for i in range(2, len(num)):
+            dp[i] = max(dp[i - 1], dp[i - 2] + num[i])
 
-num = [2,1,1,2]
-
-s = Solution()
-print "\nlast: " + str(s.rob(num))
+        return dp[-1]
 
 
