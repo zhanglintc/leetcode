@@ -2,6 +2,9 @@
 // for leetcode problems
 // 2015.04.17 by zhanglin
 
+// Problem Link:
+// https://leetcode.com/problems/house-robber/
+
 // Problem:
 // You are a professional robber planning to rob houses along a street.
 // Each house has a certain amount of money stashed, the only constraint stopping you from
@@ -18,27 +21,28 @@
 class Solution {
 public:
     int rob(vector<int> &num) {
-        int fina_max = 0;
-        int tmp = 0;
-        for(int offset = 0; offset < num.size(); offset++) {
-            tmp = doRob(num, offset, num[offset]);
-            fina_max = fina_max > tmp ? fina_max : tmp;
-        }
-    }
-
-    int doRob(vector<int> &num, int offset, int loot) {
-        if(offset == num.size() - 1 || offset == num.size() - 2) {
-            return loot;
+        if(num.size() == 0) {
+            return 0;
         }
 
-        int this_max = 0;
-        int tmp = 0;
-        for(offset = offset + 2; offset < num.size(); offset++) {
-            tmp = doRob(num, offset, loot + num[offset]);
-            this_max = this_max > tmp ? this_max : tmp;
+        if(num.size() == 1) {
+            return num[0];
         }
 
-        return this_max;
+        if(num.size() == 2) {
+            return num[0] > num[1] ? num[0] : num[1];
+        }
+
+        int dp[num.size()] = {};
+
+        dp[0] = num[0];
+        dp[1] = num[0] > num[1] ? num[0] : num[1];
+
+        for(int i = 2; i < num.size(); i++) {
+            dp[i] = dp[i - 1] > (dp[i - 2] + num[i]) ? dp[i - 1] : (dp[i - 2] + num[i]);
+        }
+
+        return dp[num.size() - 1];
     }
 };
 
