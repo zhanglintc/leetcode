@@ -2,6 +2,9 @@
 // for leetcode problems
 // 2014.08.14 by zhanglin
 
+// Problem Link:
+// https://leetcode.com/problems/sort-list/
+
 // Problem:
 // Sort a linked list in O(n log n) time using constant space complexity.
 
@@ -13,70 +16,62 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution
-{
+class Solution {
 public:
-    ListNode *merge(ListNode *left, ListNode *right)
-    {
+    ListNode *merge(ListNode *left, ListNode *right) {
         ListNode *new_head;
         ListNode *pointer;
         
-        if(left == NULL)
-        {
+        if(left == NULL) {
             return right;
         }
-        if(right == NULL)
-        {
+
+        if(right == NULL) {
             return left;
         }
         
         new_head = new ListNode(0);
         pointer = new_head;
         
-        while(left != NULL && right != NULL)
-        {
-            if(left->val < right->val)
-            {
+        while(left != NULL && right != NULL) {
+            if(left->val < right->val) {
                 pointer->next = left;
                 left = left->next;
             }
-            else
-            {
+
+            else {
                 pointer->next = right;
                 right = right->next;
             }
+
             pointer = pointer->next;
         }
         
-        if(left == NULL)
-        {
+        if(left == NULL) {
             pointer->next = right;
         }
-        if(right == NULL)
-        {
+
+        if(right == NULL) {
             pointer->next = left;
         }
         
         return new_head->next;
     }
     
-    ListNode *sortList(ListNode *head)
-    {
+    ListNode *sortList(ListNode *head) {
         ListNode *fast;
         ListNode *slow;
         ListNode *new_head_left;
         ListNode *new_head_right;
         
-        if(head == NULL || head->next == NULL)
-        {
+        if(head == NULL || head->next == NULL) {
             return head;
         }
         
         fast = head;
         slow = head;
         
-        while(fast->next != NULL && fast->next->next != NULL)
-        {
+        while(fast->next != NULL && fast->next->next != NULL) {
             fast = fast->next->next;
             slow = slow->next;
         }
