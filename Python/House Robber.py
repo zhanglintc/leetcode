@@ -19,6 +19,26 @@ class Solution:
     # @param num, a list of integer
     # @return an integer
     def rob(self, num):
-        pass
+        fina_max = 0
+        for offset in range(len(num)):
+            fina_max = max(fina_max, self.doRob(num, offset, num[offset]))
+
+        return fina_max
+
+    def doRob(self, num, offset, loot):
+        if offset == (len(num) - 1) or offset == (len(num) - 2):
+            return loot
+
+        this_max = 0
+        for offset in range(offset + 2, len(num)):
+            this_max = max(this_max, self.doRob(num, offset, loot + num[offset]))
+
+        return this_max
+
+
+num = [2,1,1,2]
+
+s = Solution()
+print "\nlast: " + str(s.rob(num))
 
 
