@@ -44,7 +44,7 @@ public class Solution {
                 }
 
                 tobeMoved = current.next;
-                current.next = tobeMoved.next;
+                current.next = current.next.next;
                 tobeMoved.next = insertPos.next;
                 insertPos.next = tobeMoved;
             }
