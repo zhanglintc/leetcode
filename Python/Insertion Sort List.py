@@ -22,7 +22,7 @@ class Solution:
         dummy.next = head
 
         current = head
-        while current.next:
+        while current.next: # judge current.next bacause we are using current.next.val below
             if current.val < current.next.val: # if sorted, move forward(means before current.next is sorted)
                 current = current.next
 
