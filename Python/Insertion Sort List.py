@@ -23,18 +23,18 @@ class Solution:
 
         current = head
         while current.next:
-            if current.val < current.next.val: # if sorted, move forward
+            if current.val < current.next.val: # if sorted, move forward(means before current.next is sorted)
                 current = current.next
 
-            else: # this node need to be inserted to previous sorted list
-                insertPos = dummy # find insertion position from the very beginning
+            else: # current.next need to be inserted to previous sorted list
+                insertPos = dummy # find insertm position from the very beginning
                 while insertPos.next.val < current.next.val: # find appropriate position
                     insertPos = insertPos.next
 
                 # after while loop, now insertPos.val <= TobeMoved.val <= insertPos.next.val
                 # then insert TobeMoved between insertPos and insertPos.next
                 TobeMoved = current.next
-                current.next = TobeMoved.next
+                current.next = current.next.next
                 TobeMoved.next = insertPos.next
                 insertPos.next = TobeMoved
 
