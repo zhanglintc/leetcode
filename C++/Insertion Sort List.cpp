@@ -19,49 +19,36 @@
 class Solution {
 public:
     ListNode *insertionSortList(ListNode *head) {
-        ListNode *new_head = new ListNode(0);
-        ListNode *pt_cache = NULL;
-        ListNode *pt_currt = NULL;
-
-        if(head == NULL || head->next == NULL) {
+        if(!head) {
             return head;
         }
 
-        while(head != NULL) {
-            if(new_head->next == NULL) {
-                new_head->next = head;
-                head = head->next;
-                new_head->next->next = NULL;
+        ListNode *dummy = new ListNode(0);
+        dummy->next = head;
+
+        ListNode *insertPos = NULL;
+        ListNode *tobeMoved = NULL;
+
+        ListNode *current = head;
+        while(current->next) {
+            if(current->val < current->next->val) {
+                current = current->next;
             }
 
             else {
-                pt_cache = new_head;
-                pt_currt = new_head->next;
-
-                while(pt_currt != NULL) {
-                    if(head->val <= pt_currt->val) {
-                        pt_cache->next = head;
-                        head = head->next;
-                        pt_cache->next->next = pt_currt;
-                        break;
-                    }
-
-                    else {
-                        pt_cache = pt_cache->next;
-                        pt_currt = pt_currt->next;
-                        continue;
-                    }
+                insertPos = dummy;
+                while(insertPos->next->val < current->next->val) {
+                    insertPos = insertPos->next;
                 }
 
-                if(pt_currt == NULL) {
-                    pt_cache->next = head;
-                    head = head->next;
-                    pt_cache->next->next = NULL;
-                }
+                tobeMoved = current->next;
+                current->next = current->next->next;
+                tobeMoved->next = insertPos->next;
+                insertPos->next = tobeMoved;
             }
         }
 
-        return new_head->next;
+        return dummy->next;
     }
 };
 
