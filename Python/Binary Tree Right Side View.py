@@ -27,10 +27,30 @@
 #         self.left = None
 #         self.right = None
 
+# see Binary Tree Level Order Traversal.py
 class Solution:
     # @param root, a tree node
     # @return a list of integers
     def rightSideView(self, root):
-        pass
+        dikt = {}
+        self.levelOrder(root, 1, dikt)
+
+        lst = []
+        for i in dikt:
+            lst.append(dikt[i][-1])
+
+        return lst
+
+    def levelOrder(self, root, dept, dikt):
+        if root == None:
+            return root
+
+        if dept not in dikt:
+            dikt[dept] = []
+        
+        dikt[dept].append(root.val)
+
+        self.levelOrder(root.left,  dept + 1, dikt)
+        self.levelOrder(root.right, dept + 1, dikt)
 
 
