@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.12 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/pascals-triangle/
+
 # Problem:
 # Given numRows, generate the first numRows of Pascal's triangle.
 

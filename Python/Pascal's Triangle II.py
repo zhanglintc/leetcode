@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.13 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/pascals-triangle-ii/
+
 # Problem:
 # Given an index k, return the k[th] row of the Pascal's triangle.
 
