@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.04 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+
 # Problem:
 # Given preorder and inorder traversal of a tree, construct the binary tree.
 

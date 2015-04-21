@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.12.08 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/n-queens/
+
 # Problem:
 # The n-queens puzzle is the problem of placing n queens on an n*n chessboard such that no two queens attack each other.
 

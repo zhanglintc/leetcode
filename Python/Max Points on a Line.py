@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.08.11 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/max-points-on-a-line/
+
 # Problem:
 # Given n points on a 2D plane, find the maximum number of points that lie on the same straight line.
 

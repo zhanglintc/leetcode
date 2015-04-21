@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2015.01.04 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/maximum-gap/
+
 # Problem:
 # Given an unsorted array, find the maximum difference between the successive elements in its sorted form.
 

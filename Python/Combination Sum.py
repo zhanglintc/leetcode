@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.11.24 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/combination-sum/
+
 # Problem:
 # Given a set of candidate numbers (C) and a target number (T),
 # find all unique combinations in C where the candidate numbers sums to T.

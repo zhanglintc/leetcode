@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.10.31 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+
 # Problem:
 # Suppose a sorted array is rotated at some pivot unknown to you beforehand.
 

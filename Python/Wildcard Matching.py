@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.10.12 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/wildcard-matching/
+
 # Problem:
 # Implement wildcard pattern matching with support for '?' and '*'.
 

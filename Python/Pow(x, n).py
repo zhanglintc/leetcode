@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.28 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/powx-n/
+
 # Problem:
 # Implement pow(x, n).
 

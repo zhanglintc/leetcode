@@ -5,6 +5,9 @@
 # for leetcode problems
 # 2014.08.17 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/reorder-list/
+
 # Problem:
 # Given a singly linked list L: L0→L1→…→Ln-1→Ln,
 # reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…

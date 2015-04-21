@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2015.01.01 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/excel-sheet-column-number/
+
 # Problem:
 # Related to question Excel Sheet Column Title
 

@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.07.20 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/generate-parentheses/
+
 # Problem:
 # Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 

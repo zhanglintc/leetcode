@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.10.27 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/trapping-rain-water/
+
 # Problem:
 # Given n non-negative integers representing an elevation map where the width of each bar is 1,
 # compute how much water it is able to trap after raining.

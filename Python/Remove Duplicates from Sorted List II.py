@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.11 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
+
 # Problem:
 # Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
 

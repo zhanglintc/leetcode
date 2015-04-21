@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.12.11 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/sqrtx/
+
 # Problem:
 # Implement int sqrt(int x).
 

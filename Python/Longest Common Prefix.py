@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.08 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/longest-common-prefix/
+
 # Problem:
 # Write a function to find the longest common prefix string amongst an array of strings.
 # Don's know what longest common prefix is? See http://en.wikipedia.org/wiki/LCP_array

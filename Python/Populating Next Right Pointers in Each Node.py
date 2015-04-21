@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.14 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
+
 # Problem:
 # Given a binary tree
 #     struct TreeLinkNode

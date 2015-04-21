@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.11.05 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
+
 # Problem:
 # Follow up for "Search in Rotated Sorted Array":
 # What if duplicates are allowed?

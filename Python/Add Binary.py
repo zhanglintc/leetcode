@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.10.19 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/add-binary/
+
 # Problem:
 # Given two binary strings, return their sum (also a binary string).
 

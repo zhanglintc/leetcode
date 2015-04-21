@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.29 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/spiral-matrix-ii/
+
 # Problem:
 # Given an integer n, generate a square matrix filled with elements from 1 to n^2 in spiral order.
 

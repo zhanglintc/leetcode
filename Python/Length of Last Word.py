@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.10.19 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/length-of-last-word/
+
 # Problem:
 # Given a string s consists of upper/lower-case alphabets and empty space characters ' ',
 # return the length of last word in the string.

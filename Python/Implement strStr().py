@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.10.20 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/implement-strstr/
+
 # Problem:
 # Implement strStr().
 

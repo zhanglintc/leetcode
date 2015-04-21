@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.12.04 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/next-permutation/
+
 # Problem:
 # Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
 

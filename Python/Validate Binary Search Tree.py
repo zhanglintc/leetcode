@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.01 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/validate-binary-search-tree/
+
 # Problem:
 # Given a binary tree, determine if it is a valid binary search tree (BST).
 

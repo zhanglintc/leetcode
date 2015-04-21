@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.30 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/search-a-2d-matrix/
+
 # Problem:
 # Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
 

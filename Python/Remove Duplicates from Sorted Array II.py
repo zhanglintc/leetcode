@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.10.20 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+
 # Problem:
 # Follow up for "Remove Duplicates":
 # What if duplicates are allowed at most twice?

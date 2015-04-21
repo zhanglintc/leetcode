@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.15 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+
 # Problem:
 # Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
 

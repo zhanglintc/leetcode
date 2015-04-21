@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.30 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/set-matrix-zeroes/
+
 # Problem:
 # Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in place.
 

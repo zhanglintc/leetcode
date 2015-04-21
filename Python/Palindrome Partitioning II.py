@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.12.03 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/palindrome-partitioning-ii/
+
 # Problem:
 # Given a string s, partition s such that every substring of the partition is a palindrome.
 

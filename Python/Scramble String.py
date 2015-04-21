@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.12.10 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/scramble-string/
+
 # Problem:
 # Given a string s1, we may represent it as a binary tree by partitioning it to two non-empty substrings recursively.
 

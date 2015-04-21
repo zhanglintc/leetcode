@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.11.01 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
+
 # Problem:
 # Follow up for "Find Minimum in Rotated Sorted Array":
 # What if duplicates are allowed?

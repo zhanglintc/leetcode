@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.22 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+
 # Problem:
 # Given a linked list, remove the n[th] node from the end of list and return its head.
 

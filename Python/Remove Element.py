@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.15 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/remove-element/
+
 # Problem:
 # Given an array and a value, remove all instances of that value in place and return the new length.
 

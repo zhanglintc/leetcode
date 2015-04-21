@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.14 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/merge-sorted-array/
+
 # Problem:
 # Given two sorted integer arrays A and B, merge B into A as one sorted array.
 

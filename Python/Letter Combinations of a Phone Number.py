@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.11.25 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+
 # Problem:
 # Given a digit string, return all possible letter combinations that the number could represent.
 
@@ -9,6 +12,9 @@
 
 # Image see: https://oj.leetcode.com/problems/letter-combinations-of-a-phone-number/
 # Or the sketch by zhanglin:
+
+# Problem Link:
+# https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 # ----------------------- #
 #  1       2       3      #
 # ($_$)   (abc)   (def)   #

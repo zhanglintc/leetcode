@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.20 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/container-with-most-water/
+
 # Problem:
 # Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai).
 # n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0).

@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.12.11 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/first-missing-positive/
+
 # Problem:
 # Given an unsorted integer array, find the first missing positive integer.
 

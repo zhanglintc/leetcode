@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.12.11 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/permutation-sequence/
+
 # Problem:
 # The set [1,2,3,...,n] contains a total of n! unique permutations.
 

@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.24 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/permutations-ii/
+
 # Problem:
 # Given a collection of numbers that might contain duplicates,
 # return all possible UNIQUE permutations.

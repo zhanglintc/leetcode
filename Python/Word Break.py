@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2015.01.12 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/word-break/
+
 # Problem:
 # Given a string s and a dictionary of words dict,
 # determine if s can be segmented into a space-separated sequence of one or more dictionary words.

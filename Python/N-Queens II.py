@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.12.09 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/n-queens-ii/
+
 # Problem:
 # Follow up for N-Queens problem.
 

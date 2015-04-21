@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2015.01.03 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/factorial-trailing-zeroes/
+
 # Problem:
 # Given an integer n, return the number of trailing zeroes in n!.
 

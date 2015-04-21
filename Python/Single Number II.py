@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.08.20 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/single-number-ii/
+
 # Problem:
 # Given an array of integers, every element appears three times except for one. Find that single one.
 

@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.11 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+
 # Problem:
 # Given a sorted linked list, delete all duplicates such that each element appear only once.
 

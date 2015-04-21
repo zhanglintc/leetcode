@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.27 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/sort-colors/
+
 # Problem:
 # Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent,
 # with the colors in the order red, white and blue.

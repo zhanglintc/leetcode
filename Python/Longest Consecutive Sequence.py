@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.08 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/longest-consecutive-sequence/
+
 # Problem:
 # Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
 

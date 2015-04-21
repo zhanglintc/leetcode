@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.27 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/plus-one/
+
 # Problem:
 # Given a non-negative number represented as an array of digits, plus one to the number.
 

@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.10.01 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/regular-expression-matching/
+
 # Problem:
 # Implement regular expression matching with support for '.' and '*'.
 

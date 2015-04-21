@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.08 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/longest-palindromic-substring/
+
 # Problem:
 # Given a string S, find the longest palindromic substring in S.
 # You may assume that the maximum length of S is 1000,

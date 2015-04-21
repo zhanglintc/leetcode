@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.28 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/gray-code/
+
 # Problem:
 # The gray code is a binary numeral system where two successive values differ in only one bit.
 

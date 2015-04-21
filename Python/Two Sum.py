@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.07.04 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/two-sum/
+
 # Problem:
 # Given an array of integers, find two numbers such that they add up to a specific target number.
 

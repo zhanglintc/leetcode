@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.05 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/valid-parentheses/
+
 # Problem:
 # Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 

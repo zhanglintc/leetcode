@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.16 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/combinations/
+
 # Problem:
 # Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
 
@@ -35,6 +38,9 @@ class Solution:
                 this_lst[depth] = i                         # set number to this depth
 
                 if (n + 1) - start < k - depth:             # avoid useless recursive   zhanglin 2014.10.26
+
+# Problem Link:
+# https://leetcode.com/problems/combinations/
                     break
 
                 self.combine_helper(n, k, fina_lst, this_lst, depth + 1, i + 1)

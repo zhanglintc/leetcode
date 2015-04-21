@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2015.01.07 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/rotate-list/
+
 # Problem:
 # Given a list, rotate the list to the right by k places, where k is non-negative.
 

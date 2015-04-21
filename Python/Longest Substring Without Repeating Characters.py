@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.08 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
 # Problem:
 # Given a string, find the length of the longest substring without repeating characters.
 # For example, the longest substring without repeating letters for "abcabcbb" is "abc",

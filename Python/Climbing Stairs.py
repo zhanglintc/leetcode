@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.27 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/climbing-stairs/
+
 # Problem:
 # You are climbing a stair case. It takes n steps to reach to the top.
 

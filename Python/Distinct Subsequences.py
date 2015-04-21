@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.12.05 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/distinct-subsequences/
+
 # Problem:
 # Given a string S and a string T, count the number of distinct subsequences of T in S.
 

@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2014.09.16 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/maximum-subarray/
+
 # Problem:
 # Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
 

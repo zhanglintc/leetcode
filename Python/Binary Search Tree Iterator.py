@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2015.01.04 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/binary-search-tree-iterator/
+
 # Problem:
 # Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
 
