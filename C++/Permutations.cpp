@@ -2,6 +2,9 @@
 // for leetcode problems
 // 2014.09.27 by zhanglin
 
+// Problem Link:
+// https://leetcode.com/problems/permutations/
+
 // Problem:
 // Given a collection of numbers, return all possible permutations.
 
