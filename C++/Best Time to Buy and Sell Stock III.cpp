@@ -13,22 +13,18 @@
 // Note:
 // You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
 
-class Solution
-{
+class Solution {
 public:
-    int maxProfit_helper(vector<int> v)
-    {
+    int maxProfit_helper(vector<int> v) {
         int profit = 0;
 
-        if(v.size() == 0)
-        {
+        if(v.size() == 0) {
             return profit;
         }
 
         int lowest = v[0];
 
-        for(int i = 0; i < v.size(); i++)
-        {
+        for(int i = 0; i < v.size(); i++) {
             lowest = min(lowest, v[i]);
             profit = max(profit, v[i] - lowest);
         }
@@ -36,15 +32,13 @@ public:
         return profit;
     }
 
-    int maxProfit(vector<int> &prices)
-    {
+    int maxProfit(vector<int> &prices) {
         vector<int> v;
         int profit = 0;
         int left;
         int right;
 
-        for(int i = 0; i < prices.size(); i++)
-        {
+        for(int i = 0; i < prices.size(); i++) {
             v.assign(prices[0], prices[i]);
             left  = maxProfit_helper(v);
             v.assign(prices[i], prices[prices.size()]);
