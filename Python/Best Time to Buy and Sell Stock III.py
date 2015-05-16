@@ -33,7 +33,7 @@ class Solution:
             left[i] = max(prices[i] - lowest, left[i - 1])
 
         highest = prices[-1]
-        for i in range(n - 2, -1, -1): # n - 1 to 1, reverse counting, O(n) time to find maximum profit for rifht slice
+        for i in range(n - 2, -1, -1): # n - 1 to 1, reverse counting, O(n) time to find maximum profit for right slice
             highest = max(highest, prices[i])
             right[i] = max(highest - prices[i], right[i + 1])
 
