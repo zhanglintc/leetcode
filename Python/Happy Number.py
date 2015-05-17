@@ -25,6 +25,22 @@ class Solution:
     # @param {integer} n
     # @return {boolean}
     def isHappy(self, n):
-        pass
+        o = []
+        t = n
+
+        while t != 1:
+            n = t
+            t = 0
+            while n:
+                t += (n % 10) ** 2
+                n /= 10
+
+            if t not in o:
+                o.append(t)
+
+            else:
+                return False
+
+        return True
 
 
