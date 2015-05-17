@@ -29,21 +29,22 @@ class Solution:
     # @return {boolean}
     def isHappy(self, n):
         o = []
-        t = n
 
-        while t != 1:
-            n = t
+        while True:
             t = 0
             while n:
                 t += (n % 10) ** 2
                 n /= 10
 
-            if t not in o:
-                o.append(t)
+            n = t
 
-            else:
+            if n == 1:
+                return True
+
+            elif n in o:
                 return False
 
-        return True
+            else:
+                o.append(n)
 
 
