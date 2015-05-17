@@ -27,7 +27,7 @@ public:
 
         // O(n) time to find maximum profit for first transaction
         int lowest = prices[0];
-        for(int i = 0; i < prices.size(); i++) {
+        for(int i = 1; i < prices.size(); i++) {
             lowest = prices[i] < lowest ? prices[i] : lowest;
             first[i] = prices[i] - lowest > first[i - 1] ? prices[i] - lowest : first[i - 1];
         }
