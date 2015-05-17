@@ -15,7 +15,35 @@
 
 public class Solution {
     public int maxProfit(int[] prices) {
-        ;
+        int profit = 0;
+
+        if(prices.length == 0) {
+            return profit;
+        }
+
+        int[]  first = new int[prices.length];
+        int[] second = new int[prices.length];
+
+        // O(n) time to find maximum profit for first transaction
+        int lowest = prices[0];
+        for(int i = 1; i < prices.length; i++) {
+            lowest = prices[i] < lowest ? prices[i] : lowest;
+            first[i] = prices[i] - lowest > first[i - 1] ? prices[i] - lowest : first[i - 1];
+        }
+
+        // O(n) time to find maximum profit for second transaction
+        int highest = prices[prices.length - 1];
+        for(int i = prices.length - 2; i >= 0; i--) {
+            highest = highest > prices[i] ? highest : prices[i];
+            second[i] = highest - prices[i] > second[i + 1] ? highest - prices[i] : second[i + 1];
+        }
+
+        // O(n) time to find maximum profit
+        for(int i = 0; i < prices.length; i++) {
+            profit = profit > first[i] + second[i] ? profit : first[i] + second[i];
+        }
+
+        return profit;
     }
 }
 
