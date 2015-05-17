@@ -24,21 +24,21 @@ class Solution:
 
         n = len(prices)
 
-        left  = [0 for i in range(n)] # to store left  maximum profit, traverse from left to right
-        right = [0 for i in range(n)] # to sotre right maximum profit, traverse from right to left
+        first  = [0 for i in range(n)] # to store first  transaction's maximum profit, traverse from left to right
+        second = [0 for i in range(n)] # to store second transaction's maximum profit, traverse from right to left
 
         lowest = prices[0]
-        for i in range(1, n): # 1 to n -1, counting, O(n) time to find maximum profit for left slice
+        for i in range(1, n): # 1 to n -1, counting, O(n) time to find maximum profit for first transaction
             lowest = min(lowest, prices[i])
-            left[i] = max(prices[i] - lowest, left[i - 1])
+            first[i] = max(prices[i] - lowest, first[i - 1])
 
         highest = prices[-1]
-        for i in range(n - 2, -1, -1): # n - 1 to 1, reverse counting, O(n) time to find maximum profit for right slice
+        for i in range(n - 2, -1, -1): # n - 1 to 1, reverse counting, O(n) time to find maximum profit for second transaction
             highest = max(highest, prices[i])
-            right[i] = max(highest - prices[i], right[i + 1])
+            second[i] = max(highest - prices[i], second[i + 1])
 
-        for i in range(len(prices)): # O(n) time to find maximum profit between each node's profit
-            profit = max(profit, left[i] + right[i])
+        for i in range(len(prices)): # O(n) time to find maximum profit
+            profit = max(profit, first[i] + second[i])
 
         return profit # O(3n) solution
 
