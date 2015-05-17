@@ -3,6 +3,9 @@
 # 2015.05.17 by zhanglin
 
 # Problem Link:
+# https://leetcode.com/problems/happy-number/
+
+# Problem:
 # Write an algorithm to determine if a number is "happy".
 
 # A happy number is a number defined by the following process:
