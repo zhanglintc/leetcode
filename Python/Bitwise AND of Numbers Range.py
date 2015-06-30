@@ -19,6 +19,9 @@ class Solution:
     # @param {integer} n
     # @return {integer}
     def rangeBitwiseAnd(self, m, n):
-        pass
+        while n > m:
+            n &= (n - 1)
+
+        return n
 
 
