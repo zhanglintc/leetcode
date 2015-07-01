@@ -21,6 +21,20 @@
 # age 21 30
 
 # Read from the file file.txt and print its transposed content to stdout.
-Your Shell Command Here
+awk '{
+    for(i = 1; i <= NF; i++) {
+        m[NR, i] = $i;
+    }
+}
+
+END {
+    for(i = 1; i <= NF; i++) {
+        line = m[1, i];
+        for(j = 2; j <= NR; j++) {
+            line = line" "m[j, i];
+        }
+        print line;
+    }
+}' file.txt
 
 
