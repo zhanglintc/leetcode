@@ -2,6 +2,9 @@
 # for leetcode problems
 # 2015.03.25 by zhanglin
 
+# Problem Link:
+# https://leetcode.com/problems/valid-phone-numbers/
+
 # Problem:
 # Given a text file file.txt that contains list of phone numbers (one per line),
 # write a one liner bash script to print all valid phone numbers.
