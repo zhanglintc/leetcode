@@ -12,6 +12,7 @@
 # pop() -- Removes the element on top of the stack.
 # top() -- Get the top element.
 # empty() -- Return whether the stack is empty.
+
 # Notes:
 # You must use only standard operations of a queue -- which means only push to back, peek/pop from front, size, and is empty operations are valid.
 # Depending on your language, queue may not be supported natively. You may simulate a queue by using a list or deque (double-ended queue), as long as you use only standard operations of a queue.
@@ -25,23 +26,29 @@
 class Stack:
     # initialize your data structure here.
     def __init__(self):
-        pass
+        self.stk = []
 
     # @param x, an integer
     # @return nothing
     def push(self, x):
-        pass
+        self.stk.append(x)
 
     # @return nothing
     def pop(self):
-        pass
+        if self.stk:
+            self.stk.pop()
+        else:
+            pass
 
     # @return an integer
     def top(self):
-        pass
+        if self.stk:
+            return self.stk[-1]
+        else:
+            pass
 
     # @return an boolean
     def empty(self):
-        pass
+        return self.stk == []
 
 
