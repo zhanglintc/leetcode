@@ -26,6 +26,6 @@
 # Don't worry about handling ties, it is guaranteed that each word's frequency count is unique.
 
 # Read from the file words.txt and output the word frequency list to stdout.
-Your Shell Command Here
+awk '{words[$1] += 1} END{for(w in words){print w, words[w]}}' RS="[ \n]+" words.txt | sort -nrk2
 
 
