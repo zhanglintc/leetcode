@@ -18,5 +18,28 @@ class Solution:
     # @param {ListNode} head
     # @return {ListNode}
     def reverseList(self, head):
-        pass
+        if not head:
+            return
+
+        dummy_head = ListNode(0)
+        dummy_head.next = head
+
+        # set the three pointer
+        headPrev = dummy_head
+        headNext = head.next
+
+        # do reverse
+        while head.next:
+            head.next = headPrev
+            headPrev = head
+            head = headNext
+            headNext = headNext.next
+
+        # reconnect three linked list
+        head.next = headPrev
+        dummy_head.next.next = headNext
+        dummy_head.next = head
+
+        return dummy_head.next
+
 
