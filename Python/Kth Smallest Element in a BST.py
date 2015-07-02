@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 # Kth Smallest Element in a BST
 # for leetcode problems
 # 2015.07.02 by zhanglin
@@ -34,6 +37,17 @@ class Solution:
     # @param {integer} k
     # @return {integer}
     def kthSmallest(self, root, k):
-        pass
+        valList = []
+        self.loadValue(root, valList)
+
+        return valList[k - 1]
+
+    def loadValue(self, root, valList):
+        if not root:
+            return
+
+        self.loadValue(root.left,  valList)
+        valList.append(root.val)
+        self.loadValue(root.right, valList)
 
 
