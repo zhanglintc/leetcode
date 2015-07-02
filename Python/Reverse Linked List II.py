@@ -32,6 +32,9 @@ class Solution:
     # @param n, an integer
     # @return a ListNode
     def reverseBetween(self, head, m, n):
+        if not head:
+            return
+
         dummy_head = ListNode(0)
         dummy_head.next = head
         last = dummy_head # always point position m - 1
