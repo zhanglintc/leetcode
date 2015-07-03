@@ -28,6 +28,22 @@ class Solution:
     # @param {integer} n
     # @return {integer[][]}
     def combinationSum3(self, k, n):
-        pass
+        this_lst = []
+        fina_lst = []
+
+        self.search(k, n, 1, 0, this_lst, fina_lst)
+
+        return fina_lst
+
+    def search(self, k, n, start, depth, this_lst, fina_lst):
+        if depth == k and sum(this_lst) == n:
+            fina_lst.append(this_lst[:])
+            return
+
+        for i in range(start, 9 + 1):
+            if i not in this_lst:
+                this_lst.append(i)
+                self.search(k, n, i, depth + 1, this_lst, fina_lst)
+                this_lst.pop()
 
 
