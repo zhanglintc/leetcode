@@ -26,6 +26,23 @@ class Solution:
     # @param {integer} val
     # @return {ListNode}
     def removeElements(self, head, val):
-        pass
+        if not head:
+            return head
+
+        dummy_head = ListNode(0)
+        dummy_head.next = head
+
+        headPrev = dummy_head
+
+        while head:
+            if head.val == val:
+                headPrev.next = head.next
+                head = head.next
+
+            else:
+                headPrev = headPrev.next
+                head = head.next
+
+        return dummy_head.next
 
 
