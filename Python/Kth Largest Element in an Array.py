@@ -26,6 +26,7 @@ class Solution:
     # @param {integer} k
     # @return {integer}
     def findKthLargest(self, nums, k):
-        pass
+        nums.sort()
+        return nums[-k]
 
 
