@@ -24,6 +24,35 @@ class Solution:
     # @param {integer[]} nums
     # @return {integer}
     def rob(self, nums):
-        pass
+        if not nums:
+            return 0
+
+        if len(nums) == 1:
+            return nums[0]
+
+        planA = self.rob_no_circle(nums[:-1])
+        planB = self.rob_no_circle(nums[1:])
+
+        return max(planA, planB)
+
+    def rob_no_circle(self, num):
+        if not num:
+            return 0
+
+        if len(num) == 1:
+            return num[0]
+
+        if len(num) == 2:
+            return max(num[0], num[1])
+
+        dp = [0 for i in range(len(num))]
+
+        dp[0] = num[0]
+        dp[1] = max(num[0], num[1])
+
+        for i in range(2, len(num)):
+            dp[i] = max(dp[i - 1], dp[i - 2] + num[i])
+
+        return dp[-1]
 
 
