@@ -25,23 +25,23 @@
 class Queue:
     # initialize your data structure here.
     def __init__(self):
-        pass
+        self.queue = []
 
     # @param x, an integer
     # @return nothing
     def push(self, x):
-        pass
+        self.queue.append(x)
 
     # @return nothing
     def pop(self):
-        pass
+        self.queue.pop(0)
 
     # @return an integer
     def peek(self):
-        pass
+        return self.queue[0]
 
     # @return an boolean
     def empty(self):
-        pass
+        return self.queue == []
 
 
