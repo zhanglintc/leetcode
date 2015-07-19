@@ -38,27 +38,37 @@ class Solution:
     # @param {TreeNode} q
     # @return {TreeNode}
     def lowestCommonAncestor(self, root, p, q):
-        pList = []
-        qList = []
-
-        self.findTarget(root, p, pList)
-        self.findTarget(root, q, qList)
-
-        for node in qList:
-            if node in pList:
-                return node
-
-    def findTarget(self, root, target, lst):
         if not root:
             return root
 
-        if root.val != target.val:
-            lst.append(root)
-            if self.findTarget(root.left,  target, lst):
-                return True
-            self.findTarget(root.right, target, lst)
+        pList = []
+        qList = []
 
-        else:
-            return True
+        this = root
+        while this.val != p.val:
+            pList.append(p.val)
+
+            if this.val > p.val:
+                this = this.left
+
+            else:
+                this = this.right
+
+        this = root
+        while this.val != q.val:
+            qList.append(q.val)
+
+            if this.val > q.val:
+                this = this.left
+
+            else:
+                this = this.right
+
+        size = min(len(pList), len(qList))
+        for i in range(1, size):
+            if pList[i] != qList[i]:
+                return pList[i - 1]
+
+        return pList[-1]
 
 
