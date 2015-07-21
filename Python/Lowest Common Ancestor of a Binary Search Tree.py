@@ -46,7 +46,7 @@ class Solution:
 
         this = root
         while this.val != p.val:
-            pList.append(p.val)
+            pList.append(this.val)
 
             if this.val > p.val:
                 this = this.left
@@ -54,9 +54,11 @@ class Solution:
             else:
                 this = this.right
 
+        pList.append(this.val)
+
         this = root
         while this.val != q.val:
-            qList.append(q.val)
+            qList.append(this.val)
 
             if this.val > q.val:
                 this = this.left
@@ -64,11 +66,21 @@ class Solution:
             else:
                 this = this.right
 
-        size = min(len(pList), len(qList))
-        for i in range(1, size):
-            if pList[i] != qList[i]:
-                return pList[i - 1]
+        qList.append(this.val)
 
-        return pList[-1]
+        CA = pList.pop(0) # enough
+        CA = qList.pop(0) # useless
+        while pList and qList:
+            pPop = pList.pop(0)
+            qPop = qList.pop(0)
+
+            if pPop != qPop:
+                return CA
+
+            else:
+                CA = pPop # enough
+                CA = qPop # useless
+
+        return CA
 
 
