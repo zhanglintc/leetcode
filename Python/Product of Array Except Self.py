@@ -21,6 +21,17 @@ class Solution:
     # @param {integer[]} nums
     # @return {integer[]}
     def productExceptSelf(self, nums):
-        pass
+        output = []
+        p = 1
+        for i in range(len(nums)):
+            output.append(p)
+            p *= nums[i]
+
+        p = 1
+        for i in range(len(nums) - 1, -1, -1):
+            output[i] *= p
+            p *= nums[i]
+
+        return output
 
 
