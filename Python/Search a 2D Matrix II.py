@@ -32,6 +32,11 @@ class Solution:
     # @param {integer} target
     # @return {boolean}
     def searchMatrix(self, matrix, target):
-        pass
+        for row in matrix:
+            for item in row:
+                if item == target:
+                    return True
+                    
+        return False
 
 
