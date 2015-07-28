@@ -12,6 +12,15 @@ class Solution:
     # @param {integer} n
     # @return {boolean}
     def isPowerOfTwo(self, n):
-        pass
+        if n <= 0:
+            return False
+
+        while n != 1:
+            if n % 2 == 1:
+                return False
+
+            n >>= 1
+
+        return True
 
 
