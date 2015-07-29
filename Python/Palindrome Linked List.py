@@ -12,10 +12,10 @@
 # Could you do it in O(n) time and O(1) space?
 
 # Definition for singly-linked list.
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
 class Solution:
     # @param {ListNode} head
@@ -31,7 +31,6 @@ class Solution:
         fast = dummy
 
         while fast and fast.next:
-            prev = slow
             slow = slow.next
             fast = fast.next.next
 
@@ -42,7 +41,6 @@ class Solution:
         # more than ONE node
         left  = head
         right = self.reverseList(slow.next)
-        fixNode = right
 
         while right:
             if left.val != right.val:
@@ -52,7 +50,8 @@ class Solution:
             left  = left.next
             right = right.next
 
-            return True
+        slow.next = self.reverseList(slow.next)
+        return True
 
     def reverseList(self, head):
         if not head:
@@ -79,10 +78,4 @@ class Solution:
 
         return dummy_head.next
 
-s = Solution()
-node = ListNode(1)
-node.next = ListNode(1)
-node.next.next = ListNode(2)
-node.next.next.next = ListNode(1)
-print s.isPalindrome(node)
 
