@@ -34,6 +34,47 @@ class Solution:
     # @param {string} input
     # @return {integer[]}
     def diffWaysToCompute(self, input):
-        pass
+        lst = []
+        nms = []
+        ops = []
+        tmp = ""
 
+        for s in input:
+            if s in "+-*":
+                ops.append(s)
+                nms.append(tmp)
+                tmp = ""
+
+            else:
+                tmp += s
+
+        nms.append(tmp)
+
+        self.dfs(nms[:], ops[:], lst)
+
+        return (lst)
+
+    def dfs(self, nms, ops, lst):
+        if not ops:
+            lst.append(int(nms[0]))
+            return
+
+        for i in range(len(ops)):
+            tmp = eval(nms[i] + ops[i] + nms[i + 1])
+
+            if i == len(ops) - 1:
+                self.dfs(nms[:i] + [str(tmp)], ops[:i] + ops[i + 1:], lst)
+
+            else:
+                self.dfs(nms[:i] + [str(tmp)] + nms[i + 2:], ops[:i] + ops[i + 1:], lst)
+
+# input:
+# "15-7*6+24"
+# expect:
+# [-195,-51,-3,72,240]
+# result
+# [72,240,-3,-51,240,-195]
+
+s = Solution()
+print s.diffWaysToCompute("2*3-4*5")
 
