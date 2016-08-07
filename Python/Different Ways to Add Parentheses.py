@@ -33,48 +33,32 @@
 class Solution:
     # @param {string} input
     # @return {integer[]}
+
+    cache = {}
+
     def diffWaysToCompute(self, input):
+        ops = "+-*"
         lst = []
-        nms = []
-        ops = []
-        tmp = ""
 
-        for s in input:
-            if s in "+-*":
-                ops.append(s)
-                nms.append(tmp)
-                tmp = ""
+        if input in self.cache:
+            return self.cache[input]
 
-            else:
-                tmp += s
+        for idx in range(len(input)):
+            if input[idx] in ops:
+                left  = self.diffWaysToCompute(input[:idx])
+                right = self.diffWaysToCompute(input[idx + 1:])
+                op = input[idx]
 
-        nms.append(tmp)
+                for l in left:
+                    for r in right:
+                        lst.append(eval(str(l) + op + str(r)))
 
-        self.dfs(nms[:], ops[:], lst)
+                self.cache[input] = lst
 
-        return (lst)
+        # if there's only numbers
+        if not lst:
+            lst.append(int(input))
 
-    def dfs(self, nms, ops, lst):
-        if not ops:
-            lst.append(int(nms[0]))
-            return
+        return lst
 
-        for i in range(len(ops)):
-            tmp = eval(nms[i] + ops[i] + nms[i + 1])
-
-            if i == len(ops) - 1:
-                self.dfs(nms[:i] + [str(tmp)], ops[:i] + ops[i + 1:], lst)
-
-            else:
-                self.dfs(nms[:i] + [str(tmp)] + nms[i + 2:], ops[:i] + ops[i + 1:], lst)
-
-# input:
-# "15-7*6+24"
-# expect:
-# [-195,-51,-3,72,240]
-# result
-# [72,240,-3,-51,240,-195]
-
-s = Solution()
-print s.diffWaysToCompute("2*3-4*5")
 
