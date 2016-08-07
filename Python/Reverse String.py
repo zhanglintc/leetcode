@@ -17,6 +17,11 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        pass
+        size = len(s)
+        s = list(s)
+        for i in range(size / 2):
+            s[i], s[size - 1 - i] = s[size - 1 - i], s[i]
+
+        return ''.join(s)
 
 
