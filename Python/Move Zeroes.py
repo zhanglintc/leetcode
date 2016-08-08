@@ -21,6 +21,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        pass
+        cnt = 0
+        for num in nums:
+            if num == 0:
+                cnt += 1
+
+        for i in range(cnt):
+            nums.remove(0)
+
+        nums += [0 for i in range(cnt)]
 
 
