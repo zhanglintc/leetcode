@@ -25,6 +25,6 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        pass
+        return n % 4 != 0
 
 
