@@ -35,14 +35,14 @@ class Solution:
 
         sub_max = 0
         for i in range(max_idx): # from left to highest
-            if A[i] < sub_max 
+            if A[i] < sub_max
                 water += sub_max - A[i]
             else:
                 sub_max = A[i]
 
         sub_max = 0
         for i in range(len(A) - 1, max_idx, -1): # from right to highest
-            if A[i] < sub_max 
+            if A[i] < sub_max
                 water += sub_max - A[i]
             else:
                 sub_max = A[i]
