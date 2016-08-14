@@ -18,6 +18,31 @@ class Solution(object):
         :type b: int
         :rtype: int
         """
-        pass
+        m = min(a, b)
+
+        s = 0 # sum
+        t = 0 # times
+        c = 0 # carry
+        while m:
+            ca = a & 1
+            cb = b & 1
+
+            s |= ((ca ^ cb ^ c) << t)
+
+            if (ca & cb == 1 and ca | cb == 1) or (c and ca | cb == 1):
+                c = 1
+            else:
+                c = 0
+
+            a >>= 1
+            b >>= 1
+            m >>= 1
+            t += 1
+
+        return s | (a << t) | (b << t) | (c << t)
+
+s = Solution()
+a = s.getSum(-1, 122)
+print a
 
 
